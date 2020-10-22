@@ -5,6 +5,10 @@ const hiHat = document.getElementById('hi-hat');
 const clap = document.getElementById('clap');
 const tom1 = document.getElementById('tom1');
 const crash = document.getElementById('crash');
+const eightOhEight = document.getElementById('eight-oh-eight');
+const eightOhEightDrummer = document.getElementById('eight-oh-eight-drummer');
+// const rosh = document.getElementById('rosh');
+// const roshDrummer= document.getElementById('rosh-drummer');
 
 
 //add event listeners
@@ -16,6 +20,17 @@ clap.addEventListener('click', playAudioOnClick);
 tom1.addEventListener('click', playAudioOnClick);
 crash.addEventListener('click', playAudioOnClick);
 window.addEventListener('keydown', playAudioOnKeyEvent);
+
+
+// select which drummer from menu
+eightOhEight.addEventListener('click', function(e){
+eightOhEightDrummer.style.display = 'block';
+});
+
+// rosh.addEventListener('click', function(e){
+//
+// roshDrummer.style.display = 'block';
+// });
 
 
 //play Audio on Key Event
