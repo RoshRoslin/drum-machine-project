@@ -7,7 +7,19 @@ const tom1 = document.getElementById('tom1');
 const crash = document.getElementById('crash');
 
 
-window.addEventListener('keydown', function(e){
+//add event listeners
+
+kick.addEventListener('click', playAudioOnClick);
+snare.addEventListener('click', playAudioOnClick);
+hiHat.addEventListener('click', playAudioOnClick);
+clap.addEventListener('click', playAudioOnClick);
+tom1.addEventListener('click', playAudioOnClick);
+crash.addEventListener('click', playAudioOnClick);
+window.addEventListener('keydown', playAudioOnKeyEvent);
+
+
+//play Audio on Key Event
+function playAudioOnKeyEvent(e){
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 
@@ -23,26 +35,30 @@ window.addEventListener('keydown', function(e){
   //play sample
   audio.play();
 
-});
+}
 
-kick.addEventListener('click', function(e){
-  const kickAudio = document.querySelector(`audio[data-key="65"]`);
-  const kickSampleKey = document.querySelector(`.key[data-key="65"]`);
 
-  if(!kickAudio){
+
+//Play Audio On Click event
+function playAudioOnClick(e){
+  let dataId = e.target.getAttribute('data-key');
+  const audio = document.querySelector(`audio[data-key="${dataId}"]`);
+  const sampleKey = document.querySelector(`.key[data-key="${dataId}"]`);
+
+  if(!audio){
     return
   }
 
 
-  kickSampleKey.classList.add('playing');
+  sampleKey.classList.add('playing');
 
   //rewind sample
-  kickAudio.currentTime = 0;
+  audio.currentTime = 0;
 
   //play sample
-  kickAudio.play();
+  audio.play();
 
-})
+}
 
 
 // add event listener for each key press to remove transition
@@ -54,4 +70,4 @@ function removeTransition(e){
     return
   }
   this.classList.remove('playing');
-};
+}
