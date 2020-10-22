@@ -1,0 +1,31 @@
+/* body {
+  background-image: url(../img/background.jpg);
+
+} */
+
+
+ .container {
+    position: relative;
+    z-index: 2;
+
+}
+.demo_wrap img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: auto;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.playing {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
+  transition: all 0.07s;
+}
+
+.key {
+  transition: all 0.07s;
+}
