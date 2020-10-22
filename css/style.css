@@ -6,7 +6,7 @@
   display: none;
 }
 
-#rosh-drummer {
+#rosh__drummer {
   display: none;
 }
 
@@ -74,6 +74,42 @@
 }
 
 #crash:active {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
+}
+
+#rosh__kick:active {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
+}
+
+#rosh__snare:active {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
+}
+
+#rosh__hi-hat:active {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
+}
+
+#rosh__clap:active {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
+}
+
+#rosh__tom1:active {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
+}
+
+#rosh__crash:active {
   transform:scale(1.2);
   border-color: white;
   box-shadow: 0 0 10px #00baff;
