@@ -33,6 +33,9 @@ eightOhEightDrummer.style.display = 'block';
 // });
 
 
+
+
+
 //play Audio on Key Event
 function playAudioOnKeyEvent(e){
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -42,6 +45,7 @@ function playAudioOnKeyEvent(e){
     //stop function if key is incorrect
     return
   }
+
   key.classList.add('playing');
 
   //rewind sample
@@ -49,7 +53,6 @@ function playAudioOnKeyEvent(e){
 
   //play sample
   audio.play();
-
 }
 
 
@@ -64,19 +67,15 @@ function playAudioOnClick(e){
     return
   }
 
-
-  sampleKey.classList.add('playing');
-
   //rewind sample
   audio.currentTime = 0;
 
   //play sample
   audio.play();
-
 }
 
 
-// add event listener for each key press to remove transition
+// // add event listener for each key press to remove transition
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
 function removeTransition(e){
@@ -84,5 +83,7 @@ function removeTransition(e){
   if(e.propertyName !== 'transform'){
     return
   }
+
   this.classList.remove('playing');
+
 }

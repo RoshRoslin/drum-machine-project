@@ -29,13 +29,52 @@
   transform:scale(1.2);
   border-color: white;
   box-shadow: 0 0 10px #00baff;
-  transition: all 0.07s;
+}
+
+.test {
+  color:red;
 }
 
 .key {
-  transition: all 0.07s;
+  transition: all 0.1s;
 }
 
 .dropdown {
   z-index: 100;
+}
+
+#kick:active {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
+}
+
+#snare:active {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
+}
+
+#hi-hat:active {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
+}
+
+#clap:active {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
+}
+
+#tom1:active {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
+}
+
+#crash:active {
+  transform:scale(1.2);
+  border-color: white;
+  box-shadow: 0 0 10px #00baff;
 }
