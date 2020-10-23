@@ -16,6 +16,7 @@ const roshHiHat = document.getElementById('rosh__hi-hat');
 const roshClap = document.getElementById('rosh__clap');
 const roshTom1 = document.getElementById('rosh__tom1');
 const roshCrash = document.getElementById('rosh__crash');
+let whichDrummer;
 
 
 
@@ -33,6 +34,10 @@ hiHat.addEventListener('click', playAudioOnClick);
 clap.addEventListener('click', playAudioOnClick);
 tom1.addEventListener('click', playAudioOnClick);
 crash.addEventListener('click', playAudioOnClick);
+
+// select drummer
+whichDrummer = '808';
+
 });
 
 
@@ -40,17 +45,24 @@ crash.addEventListener('click', playAudioOnClick);
 rosh.addEventListener('click', function(e){
 pickYourDrummerHandler();
 
-//add event listeners
-roshDrummer.style.display = 'block';
 window.removeEventListener('keydown', playAudioOnKeyEvent);
 
+//add event listeners
+roshDrummer.style.display = 'block';
+
 window.addEventListener('keydown', playAudioOnKeyEvent);
+
+
 roshKick.addEventListener('click', playAudioOnClick);
 roshSnare.addEventListener('click', playAudioOnClick);
 roshHiHat.addEventListener('click', playAudioOnClick);
 roshClap.addEventListener('click', playAudioOnClick);
 roshTom1.addEventListener('click', playAudioOnClick);
 roshCrash.addEventListener('click', playAudioOnClick);
+
+//select drummer
+whichDrummer = 'Rosh';
+
 });
 
 
@@ -61,20 +73,63 @@ roshCrash.addEventListener('click', playAudioOnClick);
 function playAudioOnKeyEvent(e){
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  const dataKey = parseInt(audio.getAttribute('data-key'));
 
   if(!audio){
     //stop function if key is incorrect
     return
   }
 
-  key.classList.add('playing');
 
-  //rewind sample
-  audio.currentTime = 0;
 
-  //play sample
-  audio.play();
+  if(whichDrummer === '808'){
+
+    if (dataKey === 65 ||
+        dataKey === 83 ||
+        dataKey === 68 ||
+        dataKey === 70 ||
+        dataKey === 71 ||
+        dataKey === 72
+    ) {
+      key.classList.add('playing');
+
+      //rewind sample
+      audio.currentTime = 0;
+
+      //play sample
+      audio.play();
+      return
+    }
+  }
+
+    else if(whichDrummer === 'Rosh'){
+
+
+        if (dataKey === 90 ||
+            dataKey === 88 ||
+            dataKey === 67 ||
+            dataKey === 86 ||
+            dataKey === 66 ||
+            dataKey === 78
+        ) {
+          key.classList.add('playing');
+
+          //rewind sample
+          audio.currentTime = 0;
+
+          //play sample
+          audio.play();
+          return
+        }
+    }
+
+    else {
+      return
+    }
+
 }
+
+
 
 
 
