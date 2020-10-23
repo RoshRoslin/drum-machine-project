@@ -13,8 +13,8 @@ const pickYourDrummer = document.querySelectorAll('.drummer');
 const roshKick = document.getElementById('rosh__kick');
 const roshSnare = document.getElementById('rosh__snare');
 const roshHiHat = document.getElementById('rosh__hi-hat');
-const roshClap = document.getElementById('rosh__clap');
 const roshTom1 = document.getElementById('rosh__tom1');
+const roshTom2 = document.getElementById('rosh__tom2');
 const roshCrash = document.getElementById('rosh__crash');
 let whichDrummer;
 
@@ -56,8 +56,8 @@ window.addEventListener('keydown', playAudioOnKeyEvent);
 roshKick.addEventListener('click', playAudioOnClick);
 roshSnare.addEventListener('click', playAudioOnClick);
 roshHiHat.addEventListener('click', playAudioOnClick);
-roshClap.addEventListener('click', playAudioOnClick);
 roshTom1.addEventListener('click', playAudioOnClick);
+roshTom2.addEventListener('click', playAudioOnClick);
 roshCrash.addEventListener('click', playAudioOnClick);
 
 //select drummer
